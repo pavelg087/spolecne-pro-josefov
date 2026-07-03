@@ -1,16 +1,21 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import {
-  sdruzeni,
-  oNas,
-  kandidati,
-  program,
-  konkretniProgram,
-  aktivity,
-  kontakt,
-} from "@/data/content";
+import { getSiteContent } from "@/lib/content-store";
 
-export default function Home() {
+// Stránka se vykresluje dynamicky, aby vždy ukázala aktuální obsah z adminu.
+export const dynamic = "force-dynamic";
+
+export default async function Home() {
+  const {
+    sdruzeni,
+    oNas,
+    kandidati,
+    program,
+    konkretniProgram,
+    aktivity,
+    kontakt,
+  } = await getSiteContent();
+
   return (
     <>
       <Header />
@@ -281,7 +286,11 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <Footer />
+      <Footer
+        nazev={sdruzeni.nazev}
+        obec={sdruzeni.obec}
+        email={kontakt.email}
+      />
     </>
   );
 }

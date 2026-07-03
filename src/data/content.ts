@@ -223,3 +223,28 @@ export const kontakt = {
   facebook: "", // např. "https://facebook.com/..."
   telefon: "",
 };
+
+// -------------------------------------------------------------------
+//  Souhrnný objekt veškerého editovatelného obsahu.
+//  Slouží jako VÝCHOZÍ hodnoty; admin ukládá úpravy do databáze,
+//  které se pak přes tyto výchozí hodnoty "překryjí".
+// -------------------------------------------------------------------
+export type SiteContent = {
+  sdruzeni: typeof sdruzeni;
+  oNas: string[];
+  kandidati: Kandidat[];
+  program: ProgramBod[];
+  konkretniProgram: typeof konkretniProgram;
+  aktivity: typeof aktivity;
+  kontakt: typeof kontakt;
+};
+
+export const defaultContent: SiteContent = {
+  sdruzeni,
+  oNas,
+  kandidati,
+  program,
+  konkretniProgram,
+  aktivity,
+  kontakt,
+};
