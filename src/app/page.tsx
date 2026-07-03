@@ -5,6 +5,8 @@ import {
   oNas,
   kandidati,
   program,
+  konkretniProgram,
+  aktivity,
   kontakt,
 } from "@/data/content";
 
@@ -150,6 +152,98 @@ export default function Home() {
                   </ul>
                 </div>
               ))}
+            </div>
+
+            {/* Konkrétní program dle podkladu sdružení */}
+            <div className="mt-16 rounded-2xl bg-primary p-8 text-white sm:p-10">
+              <h3 className="text-2xl font-bold">{konkretniProgram.nadpis}</h3>
+              <p className="mt-2 max-w-3xl text-white/85">
+                {konkretniProgram.uvod}
+              </p>
+              <div className="mt-8 grid gap-8 md:grid-cols-2">
+                <div>
+                  <h4 className="font-semibold text-accent-light">
+                    {konkretniProgram.potrebySkupina.nadpis}
+                  </h4>
+                  <ul className="mt-3 space-y-2">
+                    {konkretniProgram.potrebySkupina.body.map((b, i) => (
+                      <li key={i} className="flex gap-2 text-sm text-white/90">
+                        <span className="mt-0.5 text-accent-light">✓</span>
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-accent-light">
+                    {konkretniProgram.investiceSkupina.nadpis}
+                  </h4>
+                  <ul className="mt-3 space-y-2">
+                    {konkretniProgram.investiceSkupina.body.map((b, i) => (
+                      <li key={i} className="flex gap-2 text-sm text-white/90">
+                        <span className="mt-0.5 text-accent-light">✓</span>
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+              <p className="mt-8 rounded-xl bg-white/10 p-4 text-sm font-medium">
+                💡 {konkretniProgram.participativni}
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* AKTIVITY SDRUŽENÍ */}
+        <section id="aktivity" className="scroll-mt-20 bg-surface">
+          <div className="mx-auto max-w-4xl px-4 py-20">
+            <h2 className="text-center text-3xl font-bold text-primary">
+              Aktivity sdružení
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-center text-gray-700">
+              {aktivity.uvod}
+            </p>
+
+            <div className="mt-10 space-y-6">
+              {aktivity.polozky.map((a, i) => (
+                <div
+                  key={i}
+                  className="rounded-xl border border-surface-dark bg-white p-6 shadow-sm"
+                >
+                  <h3 className="text-lg font-bold text-secondary">
+                    {a.nadpis}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-gray-700">
+                    {a.text}
+                  </p>
+                </div>
+              ))}
+
+              {/* Odkaz na rozhovor */}
+              <a
+                href={aktivity.rozhovor.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block rounded-xl border border-accent bg-amber-50 p-6 shadow-sm transition hover:shadow-md"
+              >
+                <div className="text-xs font-semibold uppercase tracking-wide text-accent">
+                  Rozhovor · {aktivity.rozhovor.zdroj} ·{" "}
+                  {aktivity.rozhovor.datum}
+                </div>
+                <h3 className="mt-2 text-lg font-bold text-gray-900">
+                  {aktivity.rozhovor.titulek}
+                </h3>
+                <p className="mt-1 text-sm font-medium text-gray-600">
+                  {aktivity.rozhovor.osoba}
+                </p>
+                <p className="mt-3 text-sm leading-relaxed text-gray-700">
+                  {aktivity.rozhovor.perex}
+                </p>
+                <span className="mt-3 inline-block text-sm font-semibold text-primary">
+                  Přečíst celý rozhovor →
+                </span>
+              </a>
             </div>
           </div>
         </section>

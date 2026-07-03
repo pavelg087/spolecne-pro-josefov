@@ -159,6 +159,64 @@ export const program: ProgramBod[] = [
   },
 ];
 
+// Konkrétní program (podle podkladu sdružení). Doplňuje tematické okruhy výše.
+export const konkretniProgram = {
+  nadpis: "Konkrétní kroky pro Josefov",
+  uvod:
+    "Je nás tak akorát na domluvu — společně si pomůžeme. Ptáme se, co " +
+    "potřebujete, a tady je, co pro obec chceme prosadit.",
+  potrebySkupina: {
+    nadpis: "Co pro vás chceme zajistit",
+    body: [
+      "Zajistit dovoz objednaných nákupů 2× týdně.",
+      "Dostupnost starosty na úřadě alespoň jednou týdně do 18 hodin.",
+      "Přehodnocení odpadového systému — zejména čistota a bezpečnost u kontejnerů.",
+      "Bezpečné dojetí na kole do Prušánek — po zjištění stavu výkupu pozemků případně navrhnout jinou cestu.",
+      "Zvýšit společnou informovanost — jednoduše pomocí informační tabule i moderními technologiemi.",
+    ],
+  },
+  investiceSkupina: {
+    nadpis: "Zvelebení obce",
+    body: [
+      "Revitalizace hřišť.",
+      "Úprava prostranství „U rybníčku“ — prvky pro děti i dospělé.",
+      "Chodník na hřbitov.",
+      "Výsadba zeleně.",
+    ],
+  },
+  participativni:
+    "Navrhujeme participativní rozpočet — sami si určíte, na co přednostně " +
+    "půjdou naše společné peníze.",
+};
+
+export const aktivity = {
+  uvod:
+    "Nejsme tu jen kvůli volbám. Do dění v Josefově se zapojujeme dlouhodobě " +
+    "a budeme pokračovat v osvědčených a oblíbených aktivitách.",
+  polozky: [
+    {
+      nadpis: "Větrníky za humnama",
+      text:
+        "Na akci, o kterou jsme úplně nestáli, se ukázalo, kolik schopných " +
+        "spoluobčanů mezi sebou máme. Děkujeme za velkou pomoc zejména " +
+        "Mgr. Marku Weiserovi, který pro nás zpracoval ohromné množství " +
+        "materiálů — i všem, kteří roky, viditelně i neviditelně, pro nás " +
+        "všechny společně pracují.",
+    },
+  ],
+  rozhovor: {
+    titulek: "„Větrníky prý zdevastují jih Moravy“",
+    osoba: "Ing. Mgr. Jitka Typltová",
+    zdroj: "ParlamentníListy.cz",
+    datum: "2. 7. 2026",
+    perex:
+      "Naše kandidátka Jitka Typltová v rozhovoru upozorňuje na plánovanou " +
+      "výstavbu větrných elektráren na jižní Moravě a její možné dopady na " +
+      "zemědělství, vinařství, lázeňství i chráněnou krajinu.",
+    url: "https://www.parlamentnilisty.cz/arena/rozhovory/Pole-vinne-sklepy-lazne-zvirata-Vetrniky-pry-zdevastuji-jih-Moravy-793574",
+  },
+};
+
 export const kontakt = {
   email: "info@spolecneprojosefov.cz",
   // Volitelně doplňte:
