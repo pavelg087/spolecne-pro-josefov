@@ -95,22 +95,22 @@ export default function Home() {
                     )}
                   </div>
                   <div className="flex flex-1 flex-col p-5">
-                    <div className="flex items-center gap-2">
-                      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
-                        {k.poradi}
-                      </span>
-                      <h3 className="font-bold text-gray-900">{k.jmeno}</h3>
-                    </div>
-                    {(k.povolani || k.vek) && (
-                      <p className="mt-1 text-sm text-gray-500">
-                        {[k.povolani, k.vek ? `${k.vek} let` : null]
-                          .filter(Boolean)
-                          .join(" · ")}
+                    <h3 className="font-bold text-gray-900">{k.jmeno}</h3>
+                    {k.povolani && (
+                      <p className="mt-1 text-sm font-medium text-secondary">
+                        {k.povolani}
                       </p>
                     )}
-                    <p className="mt-3 text-sm leading-relaxed text-gray-700">
-                      {k.popis}
-                    </p>
+                    {k.datumNarozeni && (
+                      <p className="mt-0.5 text-xs text-gray-400">
+                        nar. {k.datumNarozeni}
+                      </p>
+                    )}
+                    {k.popis && (
+                      <p className="mt-3 text-sm leading-relaxed text-gray-700">
+                        {k.popis}
+                      </p>
+                    )}
                   </div>
                 </div>
               ))}

@@ -27,58 +27,72 @@ export const oNas = [
 export type Kandidat = {
   poradi: number;
   jmeno: string;
-  vek?: number;
+  datumNarozeni?: string;
   povolani?: string;
-  popis: string;
+  popis?: string;
   foto?: string; // soubor v /public, např. "/kandidati/jan-novak.jpg"
 };
 
 export const kandidati: Kandidat[] = [
   {
     poradi: 1,
-    jmeno: "Jméno Příjmení",
-    vek: 45,
-    povolani: "povolání",
-    popis:
-      "Krátké představení kandidáta — co dělá, proč kandiduje a čemu by se " +
-      "chtěl v zastupitelstvu věnovat.",
+    jmeno: "Ing. Mgr. Jitka Typltová",
+    datumNarozeni: "18. 12. 1970",
+    povolani: "Manažerka bezpečnosti",
   },
   {
     poradi: 2,
-    jmeno: "Jméno Příjmení",
-    vek: 38,
-    povolani: "povolání",
-    popis: "Krátké představení kandidáta.",
+    jmeno: "Ing. Radim Bílek",
+    datumNarozeni: "1. 5. 1994",
+    povolani: "Stavbyvedoucí",
   },
   {
     poradi: 3,
-    jmeno: "Jméno Příjmení",
-    povolani: "povolání",
-    popis: "Krátké představení kandidáta.",
+    jmeno: "Bc. Pavel Galatík, MSc.",
+    datumNarozeni: "13. 3. 1982",
+    povolani: "Konzultant IT bezpečnosti",
   },
   {
     poradi: 4,
-    jmeno: "Jméno Příjmení",
-    povolani: "povolání",
-    popis: "Krátké představení kandidáta.",
+    jmeno: "Kateřina Bravencová",
+    datumNarozeni: "4. 10. 1998",
+    povolani: "Učitelka v MŠ",
   },
   {
     poradi: 5,
-    jmeno: "Jméno Příjmení",
-    povolani: "povolání",
-    popis: "Krátké představení kandidáta.",
+    jmeno: "Bc. Marek Macůrek",
+    datumNarozeni: "12. 12. 1978",
+    povolani: "Policie ČR",
   },
   {
     poradi: 6,
-    jmeno: "Jméno Příjmení",
-    povolani: "povolání",
-    popis: "Krátké představení kandidáta.",
+    jmeno: "Ing. Lucie Damborská",
+    datumNarozeni: "28. 9. 1995",
+    povolani: "Administrativní pracovnice",
   },
   {
     poradi: 7,
-    jmeno: "Jméno Příjmení",
-    povolani: "povolání",
-    popis: "Krátké představení kandidáta.",
+    jmeno: "Stanislav Esterka",
+    datumNarozeni: "30. 7. 1983",
+    povolani: "Hasič",
+  },
+  {
+    poradi: 8,
+    jmeno: "Luboš Koliba",
+    datumNarozeni: "4. 6. 1976",
+    povolani: "Opravář zemědělských strojů",
+  },
+  {
+    poradi: 9,
+    jmeno: "Pavel Typlt",
+    datumNarozeni: "6. 8. 1999",
+    povolani: "Podnikatel",
+  },
+  {
+    poradi: 10,
+    jmeno: "Ivana Hanáková",
+    datumNarozeni: "1. 8. 1982",
+    povolani: "Personální a mzdová účetní",
   },
 ];
 
