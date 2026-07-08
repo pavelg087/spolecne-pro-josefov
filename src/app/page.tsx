@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import KandidatiGrid from "@/components/KandidatiGrid";
 import { getSiteContent } from "@/lib/content-store";
 
 export default async function Home() {
@@ -78,109 +79,7 @@ export default async function Home() {
             <p className="mt-3 text-center text-gray-600">
               Lidé, kteří jsou připraveni pracovat pro Josefov.
             </p>
-            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {kandidati.map((k) => (
-                <div
-                  key={k.poradi}
-                  className="flex flex-col overflow-hidden rounded-xl bg-white shadow-sm transition hover:shadow-md"
-                >
-                  <div className="flex aspect-square items-center justify-center bg-surface-dark">
-                    {k.foto ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img
-                        src={k.foto}
-                        alt={k.jmeno}
-                        className="h-full w-full object-cover"
-                      />
-                    ) : (
-                      <span className="text-6xl text-primary/30">
-                        {k.jmeno.charAt(0)}
-                      </span>
-                    )}
-                  </div>
-                  <div className="flex flex-1 flex-col p-5">
-                    <h3 className="font-bold text-gray-900">{k.jmeno}</h3>
-                    {k.povolani && (
-                      <p className="mt-1 text-sm font-medium text-secondary">
-                        {k.povolani}
-                      </p>
-                    )}
-                    {k.datumNarozeni && (
-                      <p className="mt-0.5 text-xs text-gray-400">
-                        nar. {k.datumNarozeni}
-                      </p>
-                    )}
-                    {k.popis && (
-                      <p className="mt-3 text-sm leading-relaxed text-gray-700">
-                        {k.popis}
-                      </p>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Medailonky kandidátů (kdo vyplnil rozšířené představení) */}
-            {kandidati.some((k) => k.medailonek) && (
-              <div className="mt-16">
-                <h3 className="text-center text-2xl font-bold text-primary">
-                  Kandidáti se představují
-                </h3>
-                <div className="mt-8 space-y-8">
-                  {kandidati
-                    .filter((k) => k.medailonek)
-                    .map((k) => {
-                      const m = k.medailonek!;
-                      return (
-                        <div
-                          key={k.poradi}
-                          className="overflow-hidden rounded-2xl border border-surface-dark bg-white shadow-sm"
-                        >
-                          <div className="grid gap-0 md:grid-cols-2">
-                            {m.foto && (
-                              <div className="bg-surface-dark">
-                                {/* eslint-disable-next-line @next/next/no-img-element */}
-                                <img
-                                  src={m.foto}
-                                  alt={m.fotoPopis || k.jmeno}
-                                  className="h-full max-h-96 w-full object-cover"
-                                />
-                              </div>
-                            )}
-                            <div className="p-6 sm:p-8">
-                              <h4 className="text-xl font-bold text-gray-900">
-                                {k.jmeno}
-                              </h4>
-                              {k.povolani && (
-                                <p className="text-sm font-medium text-secondary">
-                                  {k.povolani}
-                                </p>
-                              )}
-                              {m.fotoPopis && (
-                                <p className="mt-2 text-xs italic text-gray-400">
-                                  {m.fotoPopis}
-                                </p>
-                              )}
-                              <dl className="mt-5 space-y-4">
-                                {m.otazky.map((qa, i) => (
-                                  <div key={i}>
-                                    <dt className="text-sm font-semibold text-primary">
-                                      {qa.otazka}
-                                    </dt>
-                                    <dd className="mt-1 text-sm leading-relaxed text-gray-700">
-                                      {qa.odpoved}
-                                    </dd>
-                                  </div>
-                                ))}
-                              </dl>
-                            </div>
-                          </div>
-                        </div>
-                      );
-                    })}
-                </div>
-              </div>
-            )}
+            <KandidatiGrid kandidati={kandidati} />
           </div>
         </section>
 
