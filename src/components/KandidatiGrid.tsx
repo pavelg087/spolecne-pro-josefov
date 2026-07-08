@@ -4,20 +4,28 @@ import { useEffect, useState } from "react";
 import type { Kandidat } from "@/data/content";
 
 function CardInner({ k }: { k: Kandidat }) {
+  const cardFoto = k.foto ?? k.medailonek?.foto;
   return (
     <>
-      <div className="flex aspect-square items-center justify-center overflow-hidden bg-surface-dark">
-        {k.foto ? (
+      <div className="relative flex aspect-square items-center justify-center overflow-hidden bg-surface-dark">
+        {cardFoto ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
-            src={k.foto}
+            src={cardFoto}
             alt={k.jmeno}
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
           />
         ) : (
-          <span className="text-6xl text-primary/30">
+          <span className="text-6xl text-primary/30 transition-transform duration-500 group-hover:scale-110">
             {k.jmeno.charAt(0)}
           </span>
+        )}
+        {k.medailonek && (
+          <div className="pointer-events-none absolute inset-0 flex items-end justify-center bg-gradient-to-t from-black/65 via-black/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+            <span className="mb-3 rounded-full bg-white/95 px-4 py-1.5 text-sm font-semibold text-primary shadow">
+              Představení →
+            </span>
+          </div>
         )}
       </div>
       <div className="flex flex-1 flex-col p-5">
@@ -135,14 +143,14 @@ export default function KandidatiGrid({
             <button
               key={k.poradi}
               onClick={() => setOpen(k)}
-              className="flex flex-col overflow-hidden rounded-xl bg-white text-left shadow-sm ring-1 ring-transparent transition hover:shadow-md hover:ring-primary/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              className="group flex flex-col overflow-hidden rounded-xl bg-white text-left shadow-sm ring-1 ring-transparent transition duration-300 hover:-translate-y-1 hover:shadow-lg hover:ring-primary/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
             >
               <CardInner k={k} />
             </button>
           ) : (
             <div
               key={k.poradi}
-              className="flex flex-col overflow-hidden rounded-xl bg-white shadow-sm"
+              className="group flex flex-col overflow-hidden rounded-xl bg-white shadow-sm transition duration-300"
             >
               <CardInner k={k} />
             </div>
