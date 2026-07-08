@@ -19,28 +19,32 @@ export default async function Home() {
       <Header />
       <main>
         {/* HERO */}
-        <section className="bg-gradient-to-br from-primary to-primary-dark text-white">
-          <div className="mx-auto max-w-5xl px-4 py-24 text-center">
-            <p className="mb-4 inline-block rounded-full bg-accent px-4 py-1 text-sm font-semibold text-primary-dark">
+        <section className="bg-[#f3f7fa]">
+          <div className="mx-auto max-w-5xl px-4 py-16 text-center sm:py-20">
+            <h1 className="sr-only">{sdruzeni.nazev}</h1>
+            <p className="mb-6 inline-block rounded-full bg-accent px-4 py-1 text-sm font-semibold text-primary-dark">
               Komunální volby 2026
             </p>
-            <h1 className="text-4xl font-extrabold tracking-tight sm:text-6xl">
-              {sdruzeni.nazev}
-            </h1>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90 sm:text-xl">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/logo.png"
+              alt={sdruzeni.nazev}
+              className="mx-auto w-full max-w-[16rem] sm:max-w-xs"
+            />
+            <p className="mx-auto mt-6 max-w-2xl text-lg font-medium text-primary-dark sm:text-xl">
               {sdruzeni.motto}
             </p>
-            <p className="mt-2 text-sm text-white/70">{sdruzeni.podtitul}</p>
+            <p className="mt-2 text-sm text-gray-500">{sdruzeni.podtitul}</p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <a
                 href="#program"
-                className="rounded-lg bg-accent px-6 py-3 font-semibold text-primary-dark transition hover:bg-accent-light"
+                className="rounded-lg bg-primary px-6 py-3 font-semibold text-white transition hover:bg-primary-dark"
               >
                 Náš program
               </a>
               <a
                 href="#kandidati"
-                className="rounded-lg border border-white/40 px-6 py-3 font-semibold transition hover:bg-white/10"
+                className="rounded-lg border border-primary/40 px-6 py-3 font-semibold text-primary transition hover:bg-primary/5"
               >
                 Naši kandidáti
               </a>
