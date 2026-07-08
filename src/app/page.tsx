@@ -2,9 +2,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getSiteContent } from "@/lib/content-store";
 
-// Stránka se vykresluje dynamicky, aby vždy ukázala aktuální obsah z adminu.
-export const dynamic = "force-dynamic";
-
 export default async function Home() {
   const {
     sdruzeni,

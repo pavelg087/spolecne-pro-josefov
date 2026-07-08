@@ -1,42 +1,20 @@
-import { Redis } from "@upstash/redis";
+import fs from "fs/promises";
+import path from "path";
 import { defaultContent, type SiteContent } from "@/data/content";
+import { hasGithub, commitFile } from "@/lib/github";
 
 // ---------------------------------------------------------------
-//  Úložiště editovatelného obsahu webu.
-//  Produkce: Upstash Redis. Lokálně bez Redisu: dočasná paměť.
+//  Obsah webu je uložený v souboru content/site.json v repozitáři.
+//  Čtení: ze souboru (fallback = výchozí hodnoty z content.ts).
+//  Ukládání: v produkci commit do GitHubu, lokálně zápis do souboru.
 // ---------------------------------------------------------------
 
-const KEY = "content:site";
+const CONTENT_PATH = path.join(process.cwd(), "content", "site.json");
+const REPO_FILE = "content/site.json";
 
-function makeRedis(): Redis | null {
-  const url =
-    process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL;
-  const token =
-    process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN;
-  if (!url || !token) return null;
-  return new Redis({ url, token, automaticDeserialization: false });
-}
-
-const redis = makeRedis();
-
-const mem = globalThis as unknown as { __contentValue?: string | null };
-
-export const hasContentStore = Boolean(redis);
-
-async function readRaw(): Promise<string | null> {
-  try {
-    if (redis) return await redis.get<string>(KEY);
-    return mem.__contentValue ?? null;
-  } catch {
-    return null;
-  }
-}
-
-// Vrací aktuální obsah: uložené úpravy překryté přes výchozí hodnoty.
 export async function getSiteContent(): Promise<SiteContent> {
-  const raw = await readRaw();
-  if (!raw) return defaultContent;
   try {
+    const raw = await fs.readFile(CONTENT_PATH, "utf8");
     const stored = JSON.parse(raw) as Partial<SiteContent>;
     return { ...defaultContent, ...stored };
   } catch {
@@ -45,10 +23,50 @@ export async function getSiteContent(): Promise<SiteContent> {
 }
 
 export async function saveSiteContent(content: SiteContent): Promise<void> {
-  const raw = JSON.stringify(content);
-  if (redis) {
-    await redis.set(KEY, raw);
+  const json = JSON.stringify(content, null, 2);
+  if (hasGithub()) {
+    const base64 = Buffer.from(json, "utf8").toString("base64");
+    await commitFile(
+      REPO_FILE,
+      base64,
+      "Admin: úprava obsahu webu"
+    );
   } else {
-    mem.__contentValue = raw;
+    // lokální vývoj bez GitHub tokenu — zápis přímo do souboru
+    await fs.mkdir(path.dirname(CONTENT_PATH), { recursive: true });
+    await fs.writeFile(CONTENT_PATH, json, "utf8");
   }
+}
+
+// Uloží fotku (base64) do public/kandidati/. Vrací veřejnou cestu.
+export async function savePhoto(
+  filename: string,
+  dataBase64: string
+): Promise<string> {
+  const safe = sanitizeFilename(filename);
+  const repoPath = `public/kandidati/${safe}`;
+  if (hasGithub()) {
+    await commitFile(repoPath, dataBase64, `Admin: nahrání fotky ${safe}`);
+  } else {
+    const localPath = path.join(process.cwd(), "public", "kandidati", safe);
+    await fs.mkdir(path.dirname(localPath), { recursive: true });
+    await fs.writeFile(localPath, Buffer.from(dataBase64, "base64"));
+  }
+  return `/kandidati/${safe}`;
+}
+
+function sanitizeFilename(name: string): string {
+  const dot = name.lastIndexOf(".");
+  let ext = dot >= 0 ? name.slice(dot + 1).toLowerCase() : "jpg";
+  if (!/^(jpg|jpeg|png|webp|gif)$/.test(ext)) ext = "jpg";
+  // NFD rozloží diakritiku na písmeno + značku; značky (ani jiné znaky)
+  // neprojdou filtrem [a-z0-9], takže z "Macůrek" zbude "macurek".
+  const base =
+    (dot >= 0 ? name.slice(0, dot) : name)
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "")
+      .slice(0, 40) || "foto";
+  return `${base}-${Date.now()}.${ext}`;
 }

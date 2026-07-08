@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getSiteContent, saveSiteContent } from "@/lib/content-store";
+import { hasGithub } from "@/lib/github";
 import type { SiteContent } from "@/data/content";
 
 export const dynamic = "force-dynamic";
@@ -21,6 +22,16 @@ export async function POST(req: NextRequest) {
   }
   if (req.headers.get("x-admin-password") !== expected) {
     return NextResponse.json({ error: "Nesprávné heslo." }, { status: 401 });
+  }
+
+  if (process.env.NODE_ENV === "production" && !hasGithub()) {
+    return NextResponse.json(
+      {
+        error:
+          "Ukládání do GitHubu není nakonfigurované (chybí proměnná GITHUB_TOKEN).",
+      },
+      { status: 503 }
+    );
   }
 
   let body: unknown;
@@ -46,6 +57,13 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  await saveSiteContent(c as SiteContent);
+  try {
+    await saveSiteContent(c as SiteContent);
+  } catch (e) {
+    return NextResponse.json(
+      { error: e instanceof Error ? e.message : "Uložení selhalo." },
+      { status: 500 }
+    );
+  }
   return NextResponse.json({ ok: true });
 }

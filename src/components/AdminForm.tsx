@@ -155,6 +155,8 @@ export default function AdminForm() {
   const [message, setMessage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
+  const [uploading, setUploading] = useState(false);
+
   function update(fn: (draft: SiteContent) => void) {
     setContent((prev) => {
       if (!prev) return prev;
@@ -162,6 +164,42 @@ export default function AdminForm() {
       fn(next);
       return next;
     });
+  }
+
+  // Nahraje fotku na server (commit do GitHubu) a vrátí veřejnou cestu.
+  function uploadPhoto(file: File, onDone: (path: string) => void) {
+    setUploading(true);
+    setError(null);
+    const reader = new FileReader();
+    reader.onerror = () => {
+      setError("Fotku se nepodařilo načíst.");
+      setUploading(false);
+    };
+    reader.onload = async () => {
+      try {
+        const dataUrl = String(reader.result);
+        const base64 = dataUrl.split(",")[1] ?? "";
+        const res = await fetch("/api/upload", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "x-admin-password": password,
+          },
+          body: JSON.stringify({ filename: file.name, dataBase64: base64 }),
+        });
+        const d = await res.json().catch(() => ({}));
+        if (!res.ok) throw new Error(d.error || "Nahrání selhalo.");
+        onDone(d.path);
+        setMessage(
+          "✓ Fotka nahrána. Zobrazí se po uložení a přestavení webu (1–2 min)."
+        );
+      } catch (err) {
+        setError(err instanceof Error ? err.message : "Chyba nahrávání.");
+      } finally {
+        setUploading(false);
+      }
+    };
+    reader.readAsDataURL(file);
   }
 
   async function login(e: React.FormEvent) {
@@ -219,7 +257,9 @@ export default function AdminForm() {
         throw new Error(d.error || "Uložení selhalo.");
       }
       setContent(toSave);
-      setMessage("✓ Uloženo. Změny jsou na webu ihned viditelné.");
+      setMessage(
+        "✓ Uloženo do GitHubu. Web se přestaví a změny se projeví za 1–2 minuty."
+      );
     } catch (err) {
       setError(err instanceof Error ? err.message : "Chyba při ukládání.");
     } finally {
@@ -393,6 +433,24 @@ export default function AdminForm() {
               value={k.foto ?? ""}
               onChange={(v) => update((d) => (d.kandidati[i].foto = v))}
             />
+            <div className="-mt-2 mb-4">
+              <label className="text-xs text-gray-500">
+                …nebo nahrát fotku:
+              </label>
+              <input
+                type="file"
+                accept="image/*"
+                disabled={uploading}
+                onChange={(e) => {
+                  const f = e.target.files?.[0];
+                  if (f)
+                    uploadPhoto(f, (p) =>
+                      update((d) => (d.kandidati[i].foto = p))
+                    );
+                }}
+                className="block text-sm"
+              />
+            </div>
             <Area
               label="Popis (nepovinné)"
               value={k.popis ?? ""}
@@ -428,6 +486,27 @@ export default function AdminForm() {
                     })
                   }
                 />
+                <div className="-mt-2 mb-4">
+                  <label className="text-xs text-gray-500">
+                    …nebo nahrát fotku:
+                  </label>
+                  <input
+                    type="file"
+                    accept="image/*"
+                    disabled={uploading}
+                    onChange={(e) => {
+                      const f = e.target.files?.[0];
+                      if (f)
+                        uploadPhoto(f, (p) =>
+                          update((d) => {
+                            if (d.kandidati[i].medailonek)
+                              d.kandidati[i].medailonek!.foto = p;
+                          })
+                        );
+                    }}
+                    className="block text-sm"
+                  />
+                </div>
                 <Field
                   label="Popisek fotky"
                   value={k.medailonek.fotoPopis ?? ""}
