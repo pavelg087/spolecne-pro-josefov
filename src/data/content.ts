@@ -58,6 +58,7 @@ export const kandidati: Kandidat[] = [
     jmeno: "Bc. Pavel Galatík, MSc.",
     datumNarozeni: "13. 3. 1982",
     povolani: "Konzultant IT bezpečnosti",
+    foto: "/kandidati/pavel-galatik.jpg",
   },
   {
     poradi: 4,
