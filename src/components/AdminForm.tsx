@@ -1,7 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import type { SiteContent, Kandidat, ProgramBod } from "@/data/content";
+import type {
+  SiteContent,
+  Kandidat,
+  ProgramBod,
+  Medailonek,
+} from "@/data/content";
 
 // ---- malé pomocné prvky --------------------------------------------
 
@@ -393,6 +398,122 @@ export default function AdminForm() {
               value={k.popis ?? ""}
               onChange={(v) => update((d) => (d.kandidati[i].popis = v))}
             />
+
+            {/* Medailonek (rozšířené představení s fotkou a otázkami) */}
+            {k.medailonek ? (
+              <div className="mt-2 rounded-lg border border-primary/20 bg-white p-3">
+                <div className="mb-2 flex items-center justify-between">
+                  <span className="text-sm font-semibold text-primary">
+                    Medailonek
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      update((d) => {
+                        delete d.kandidati[i].medailonek;
+                      })
+                    }
+                    className="text-xs text-red-600 hover:underline"
+                  >
+                    odebrat medailonek
+                  </button>
+                </div>
+                <Field
+                  label="Cesta k fotce medailonku (na šířku)"
+                  value={k.medailonek.foto ?? ""}
+                  onChange={(v) =>
+                    update((d) => {
+                      if (d.kandidati[i].medailonek)
+                        d.kandidati[i].medailonek!.foto = v;
+                    })
+                  }
+                />
+                <Field
+                  label="Popisek fotky"
+                  value={k.medailonek.fotoPopis ?? ""}
+                  onChange={(v) =>
+                    update((d) => {
+                      if (d.kandidati[i].medailonek)
+                        d.kandidati[i].medailonek!.fotoPopis = v;
+                    })
+                  }
+                />
+                <Label>Otázky a odpovědi</Label>
+                <div className="space-y-3">
+                  {k.medailonek.otazky.map((qa, qi) => (
+                    <div
+                      key={qi}
+                      className="rounded-lg border border-surface-dark p-2"
+                    >
+                      <div className="mb-1 flex justify-end">
+                        <button
+                          type="button"
+                          onClick={() =>
+                            update((d) => {
+                              const m = d.kandidati[i].medailonek!;
+                              m.otazky = m.otazky.filter((_, j) => j !== qi);
+                            })
+                          }
+                          className="text-xs text-red-600 hover:underline"
+                        >
+                          ✕ odebrat
+                        </button>
+                      </div>
+                      <input
+                        value={qa.otazka}
+                        placeholder="Otázka"
+                        onChange={(e) =>
+                          update((d) => {
+                            d.kandidati[i].medailonek!.otazky[qi].otazka =
+                              e.target.value;
+                          })
+                        }
+                        className="mb-2 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm font-medium"
+                      />
+                      <textarea
+                        value={qa.odpoved}
+                        placeholder="Odpověď"
+                        rows={3}
+                        onChange={(e) =>
+                          update((d) => {
+                            d.kandidati[i].medailonek!.otazky[qi].odpoved =
+                              e.target.value;
+                          })
+                        }
+                        className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm"
+                      />
+                    </div>
+                  ))}
+                </div>
+                <button
+                  type="button"
+                  onClick={() =>
+                    update((d) => {
+                      d.kandidati[i].medailonek!.otazky.push({
+                        otazka: "",
+                        odpoved: "",
+                      });
+                    })
+                  }
+                  className="mt-2 text-sm font-medium text-primary hover:underline"
+                >
+                  + Přidat otázku
+                </button>
+              </div>
+            ) : (
+              <button
+                type="button"
+                onClick={() =>
+                  update((d) => {
+                    const m: Medailonek = { otazky: [] };
+                    d.kandidati[i].medailonek = m;
+                  })
+                }
+                className="mt-1 text-sm font-medium text-primary hover:underline"
+              >
+                + Přidat medailonek (foto + otázky)
+              </button>
+            )}
           </div>
         ))}
         <button

@@ -31,6 +31,13 @@ export type Kandidat = {
   povolani?: string;
   popis?: string;
   foto?: string; // soubor v /public, např. "/kandidati/jan-novak.jpg"
+  medailonek?: Medailonek; // rozšířené představení (foto + otázky)
+};
+
+export type Medailonek = {
+  foto?: string; // fotka na šířku pro medailonek
+  fotoPopis?: string;
+  otazky: { otazka: string; odpoved: string }[];
 };
 
 export const kandidati: Kandidat[] = [
@@ -63,6 +70,45 @@ export const kandidati: Kandidat[] = [
     jmeno: "Bc. Marek Macůrek",
     datumNarozeni: "12. 12. 1978",
     povolani: "Policie ČR",
+    medailonek: {
+      foto: "/kandidati/marek-macurek.jpg",
+      fotoPopis:
+        "Marek Macůrek s mladými stolními tenisty TJ Sokol Josefov.",
+      otazky: [
+        {
+          otazka: "Odkud pocházíte a jaká je vaše rodina?",
+          odpoved:
+            "Jsem josefovský rodák. S manželkou Zuzanou jsme si zde postavili " +
+            "rodinný dům a založili rodinu — máme čtrnáctiletého syna Tobiáše.",
+        },
+        {
+          otazka: "Čemu se věnujete ve volném čase?",
+          odpoved:
+            "Celý život aktivně sportuji — fotbal a závodní stolní tenis, " +
+            "dalším koníčkem je vinaření. Jsem předsedou TJ Sokol Josefov.",
+        },
+        {
+          otazka: "Čím se živíte?",
+          odpoved:
+            "Jsem státní zaměstnanec — už 28 let pracuji u Policie ČR.",
+        },
+        {
+          otazka: "Co byste chtěl v obci prosadit?",
+          odpoved:
+            "Své zkušenosti bych rád využil ke zvýšení bezpečnosti v obci ve " +
+            "spolupráci s policií a IZS. Například podporou informativních " +
+            "měřičů rychlosti, které pomohou zklidnit dopravu a zvýšit " +
+            "bezpečnost chodců, a vybudováním kamerového systému u vjezdů a " +
+            "výjezdů z obce.",
+        },
+        {
+          otazka: "Váš vzkaz voličům?",
+          odpoved:
+            "Přijďte k volbám a podpořte především ty kandidáty, kterým " +
+            "důvěřujete.",
+        },
+      ],
+    },
   },
   {
     poradi: 6,

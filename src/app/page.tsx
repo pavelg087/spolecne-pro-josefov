@@ -122,6 +122,68 @@ export default async function Home() {
                 </div>
               ))}
             </div>
+
+            {/* Medailonky kandidátů (kdo vyplnil rozšířené představení) */}
+            {kandidati.some((k) => k.medailonek) && (
+              <div className="mt-16">
+                <h3 className="text-center text-2xl font-bold text-primary">
+                  Kandidáti se představují
+                </h3>
+                <div className="mt-8 space-y-8">
+                  {kandidati
+                    .filter((k) => k.medailonek)
+                    .map((k) => {
+                      const m = k.medailonek!;
+                      return (
+                        <div
+                          key={k.poradi}
+                          className="overflow-hidden rounded-2xl border border-surface-dark bg-white shadow-sm"
+                        >
+                          <div className="grid gap-0 md:grid-cols-2">
+                            {m.foto && (
+                              <div className="bg-surface-dark">
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <img
+                                  src={m.foto}
+                                  alt={m.fotoPopis || k.jmeno}
+                                  className="h-full max-h-96 w-full object-cover"
+                                />
+                              </div>
+                            )}
+                            <div className="p-6 sm:p-8">
+                              <h4 className="text-xl font-bold text-gray-900">
+                                {k.jmeno}
+                              </h4>
+                              {k.povolani && (
+                                <p className="text-sm font-medium text-secondary">
+                                  {k.povolani}
+                                </p>
+                              )}
+                              {m.fotoPopis && (
+                                <p className="mt-2 text-xs italic text-gray-400">
+                                  {m.fotoPopis}
+                                </p>
+                              )}
+                              <dl className="mt-5 space-y-4">
+                                {m.otazky.map((qa, i) => (
+                                  <div key={i}>
+                                    <dt className="text-sm font-semibold text-primary">
+                                      {qa.otazka}
+                                    </dt>
+                                    <dd className="mt-1 text-sm leading-relaxed text-gray-700">
+                                      {qa.odpoved}
+                                    </dd>
+                                  </div>
+                                ))}
+                              </dl>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                </div>
+              </div>
+            )}
           </div>
         </section>
 
