@@ -29,7 +29,24 @@
       "jmeno": "Bc. Pavel Galatík, MSc.",
       "datumNarozeni": "13. 3. 1982",
       "povolani": "Konzultant IT bezpečnosti",
-      "foto": "/kandidati/pavel-galatik.jpg"
+      "foto": "/kandidati/pavel-galatik.jpg",
+      "medailonek": {
+        "otazky": [
+          {
+            "otazka": "Odkud pocházíte a jaká je vaše rodina?",
+            "odpoved": "Školkové léta jsme byli v Kosticích, a pak jsme se přestěhovali do Hodonína. Se ženou jsme si našli po studiích práci v Brně a žili jsme v Brně a ve Šlapanicích. S přibývajícíma dětma nás to táhlo zpátky k rodině a v Josefově se nám moc líbilo, tak se snažíme být Josefákama."
+          },
+          {
+            "otazka": "Čemu se věnujete ve volném čase?",
+            "odpoved": "Snažím se co nejvíce času věnovat rodině a už od mala mám rád veškerý sport. Hraju závodně stolní tenis, tak jsem se s chutí zapojil do TJ Sokol Josefov."
+          },
+          {
+            "otazka": "Co byste chtěl v obci prosadit?",
+            "odpoved": "Chtěl bych, aby se do dění v obci přitáhlo více lidí a zejména mladých. Zejména oživit internetovou aktivitu a sociální sítě, informovat o dění v obci, tak aby to zaujalo i mladé, aby též budovali svou budoucí obci."
+          }
+        ],
+        "foto": "/kandidati/pavel-galatik.jpg"
+      }
     },
     {
       "poradi": 4,
@@ -52,7 +69,7 @@
           },
           {
             "otazka": "Čemu se věnujete ve volném čase?",
-            "odpoved": "Celý život aktivně sportuji — fotbal a závodní stolní tenis, dalším koníčkem je vinaření. Jsem předsedou TJ Sokol Josefov."
+            "odpoved": "Celý život aktivně sportuji — fotbal a závodně stolní tenis, dalším koníčkem je vinaření. Jsem předsedou TJ Sokol Josefov."
           },
           {
             "otazka": "Čím se živíte?",
