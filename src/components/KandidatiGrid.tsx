@@ -81,7 +81,7 @@ function Modal({ k, onClose }: { k: Kandidat; onClose: () => void }) {
           <img
             src={m.foto}
             alt={m.fotoPopis || k.jmeno}
-            className="max-h-80 w-full object-cover"
+            className="max-h-[70vh] w-full bg-surface object-contain"
           />
         )}
 
