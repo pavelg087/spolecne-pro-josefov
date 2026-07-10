@@ -116,6 +116,7 @@ export const kandidati: Kandidat[] = [
     jmeno: "Ing. Lucie Damborská",
     datumNarozeni: "28. 9. 1995",
     povolani: "Administrativní pracovnice",
+    foto: "/kandidati/lucie-damborska.jpg",
   },
   {
     poradi: 7,
