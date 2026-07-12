@@ -46,7 +46,7 @@
           },
           {
             "otazka": "Co byste chtěl v obci prosadit?",
-            "odpoved": "Chtěl bych, aby se do dění v obci přitáhlo více lidí a zejména mladých. Oživit internetovou aktivitu a sociální sítě, informovat o dění v obci, tak aby to zaujalo i mladé, aby též budovali svůj budoucí Josefov."
+            "odpoved": "Chtěl bych, aby se do dění v obci přitáhlo více lidí a zaujmout i mladé. Větší transparentnost dění v obci a plánování. Oživit internetovou aktivitu a sociální sítě, informovat o dění v obci, tak aby to zaujalo i mladé, aby též budovali svůj budoucí Josefov."
           }
         ],
         "foto": "/kandidati/pavel-galatik.jpg"
@@ -101,7 +101,28 @@
       "poradi": 7,
       "jmeno": "Stanislav Esterka",
       "datumNarozeni": "30. 7. 1983",
-      "povolani": "Hasič"
+      "povolani": "Hasič",
+      "medailonek": {
+        "otazky": [
+          {
+            "otazka": "Odkud pocházíte a jaká je vaše rodina?",
+            "odpoved": "Jsem josefovský rodák. S manželkou Evou jsme si zde postavili rodinný dům a založili rodinu — máme dceru Zuzku a syna Ondru."
+          },
+          {
+            "otazka": "Čemu se věnujete ve volném čase?",
+            "odpoved": "Věnuji se kuželkám. Hraju za SK Podlužan Prušánky. Chodím si s klukama zahrát fotbal. Hraju na varhany v místním kostele. Zbytek času věnuju rodině."
+          },
+          {
+            "otazka": "Čím se živíte?",
+            "odpoved": "Jsem členem hasičského záchranného sboru v Hodoníně."
+          },
+          {
+            "otazka": "Váš vzkaz voličům?",
+            "odpoved": "Přijďte k volbám a ukažte, že vám na obci záleží."
+          }
+        ],
+        "foto": ""
+      }
     },
     {
       "poradi": 8,
