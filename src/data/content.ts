@@ -103,6 +103,40 @@ export const kandidati: Kandidat[] = [
     jmeno: "Kateřina Bravencová",
     datumNarozeni: "4. 10. 1988",
     povolani: "Učitelka v MŠ",
+    foto: "/kandidati/katerina-bravencova.jpg",
+    medailonek: {
+      foto: "/kandidati/katerina-bravencova-predstaveni.jpg",
+      otazky: [
+        {
+          otazka: "Odkud pocházíte a jaká je vaše rodina?",
+          odpoved:
+            "Narodila jsem se v Josefově a žiji tady celý život. Vychovávám " +
+            "tady i své tři děti.",
+        },
+        {
+          otazka: "Čemu se věnujete ve volném čase?",
+          odpoved:
+            "Veškerý volný čas věnuji svým dětem. Podporuji je v jejich " +
+            "činnostech a zájmech. Rádi se spolu procházíme, jezdíme na kole " +
+            "a chodíme do kina.",
+        },
+        {
+          otazka: "Čím se živíte?",
+          odpoved:
+            "Pracuji jako učitelka v mateřské škole v Hodoníně. Tři roky jsem " +
+            "také učila klavír v Prušánkách.",
+        },
+        {
+          otazka: "Co byste chtěla v obci prosadit?",
+          odpoved:
+            "Chtěla bych inovovat kulturní akce, více je propagovat a dát " +
+            "prostor novým akcím. Ráda bych do dění v obci zapojila více " +
+            "místních obyvatel, podílela se na realizaci nových projektů " +
+            "a vytvořila různé mezigenerační aktivity, které by propojily " +
+            "občany všech věkových kategorií.",
+        },
+      ],
+    },
   },
   {
     poradi: 5,
