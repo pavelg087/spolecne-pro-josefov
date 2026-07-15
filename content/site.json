@@ -50,7 +50,24 @@
       "foto": "/kandidati/pavel-galatik-profil.jpg",
       "medailonek": {
         "foto": "/kandidati/pavel-galatik.jpg",
-        "otazky": []
+        "otazky": [
+          {
+            "otazka": "Odkud pochĂˇzĂ­te a jakĂˇ je vaĹˇe rodina?",
+            "odpoved": "Ĺ kolkovĂ© lĂ©ta jsme byli v KosticĂ­ch, a pak jsme se pĹ™estÄ›hovali do HodonĂ­na. Se Ĺľenou jsme si naĹˇli po studiĂ­ch prĂˇci v BrnÄ›, Ĺľili jsme v BrnÄ› a ve Ĺ lapanicĂ­ch. S rostoucĂ­m poÄŤtem dÄ›tĂ­ (3) nĂˇs to tĂˇhlo zpĂˇtky k rodinÄ› a v JosefovÄ› se nĂˇm moc lĂ­bilo, tak se snaĹľĂ­me bĂ˝t JosefĂˇkama."
+          },
+          {
+            "otazka": "ÄŚemu se vÄ›nujete ve volnĂ©m ÄŤase?",
+            "odpoved": "SnaĹľĂ­m se co nejvĂ­ce ÄŤasu vÄ›novat rodinÄ› a uĹľ od mala mĂˇm rĂˇd veĹˇkerĂ˝ sport. Hraju zĂˇvodnÄ› stolnĂ­ tenis, tak jsem se s chutĂ­ zapojil do TJ Sokol Josefov."
+          },
+          {
+            "otazka": "ÄŚĂ­m se ĹľivĂ­te?",
+            "odpoved": "Pracuju jako konzultant IT bezpeÄŤnosti ve firmÄ› Heidelberg Materials, v ÄŚR znĂˇmĂˇ jako ÄŚeskomoravskĂ˝ Cement a chrĂˇnĂ­m nĂˇs pĹ™ed kriminĂˇlnĂ­mi Ĺľivly v kyberprostoru."
+          },
+          {
+            "otazka": "Co byste chtÄ›l v obci prosadit?",
+            "odpoved": "ChtÄ›l bych, aby se do dÄ›nĂ­ v obci pĹ™itĂˇhlo vĂ­ce lidĂ­ a zaujmout i mladĂ©. VÄ›tĹˇĂ­ transparentnost dÄ›nĂ­ v obci a plĂˇnovĂˇnĂ­. OĹľivit internetovou aktivitu a sociĂˇlnĂ­ sĂ­tÄ›, informovat o dÄ›nĂ­ v obci, tak aby to zaujalo i mladĂ©, aby tĂ©Ĺľ budovali svĹŻj budoucĂ­ Josefov."
+          }
+        ]
       }
     },
     {

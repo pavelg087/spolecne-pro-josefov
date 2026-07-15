@@ -95,7 +95,39 @@ export const kandidati: Kandidat[] = [
     foto: "/kandidati/pavel-galatik-profil.jpg",
     medailonek: {
       foto: "/kandidati/pavel-galatik.jpg",
-      otazky: [],
+      otazky: [
+        {
+          otazka: "Odkud pocházíte a jaká je vaše rodina?",
+          odpoved:
+            "Školková léta jsme byli v Kosticích, a pak jsme se přestěhovali " +
+            "do Hodonína. Se ženou jsme si našli po studiích práci v Brně, žili " +
+            "jsme v Brně a ve Šlapanicích. S rostoucím počtem dětí (3) nás to " +
+            "táhlo zpátky k rodině a v Josefově se nám moc líbilo, tak se " +
+            "snažíme být Josefákama.",
+        },
+        {
+          otazka: "Čemu se věnujete ve volném čase?",
+          odpoved:
+            "Snažím se co nejvíce času věnovat rodině a už od mala mám rád " +
+            "veškerý sport. Hraju závodně stolní tenis, tak jsem se s chutí " +
+            "zapojil do TJ Sokol Josefov.",
+        },
+        {
+          otazka: "Čím se živíte?",
+          odpoved:
+            "Pracuju jako konzultant IT bezpečnosti ve firmě Heidelberg " +
+            "Materials, v ČR známé jako Českomoravský cement, a chráním nás " +
+            "před kriminálními živly v kyberprostoru.",
+        },
+        {
+          otazka: "Co byste chtěl v obci prosadit?",
+          odpoved:
+            "Chtěl bych, aby se do dění v obci přitáhlo více lidí a zaujmout " +
+            "i mladé. Větší transparentnost dění v obci a plánování. Oživit " +
+            "internetovou aktivitu a sociální sítě, informovat o dění v obci " +
+            "tak, aby to zaujalo i mladé, aby též budovali svůj budoucí Josefov.",
+        },
+      ],
     },
   },
   {
