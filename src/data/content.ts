@@ -94,7 +94,7 @@ export const kandidati: Kandidat[] = [
     povolani: "Konzultant IT bezpečnosti",
     foto: "/kandidati/pavel-galatik-profil.jpg",
     medailonek: {
-      foto: "/kandidati/pavel-galatik-predstaveni.jpg",
+      foto: "/kandidati/pavel-galatik.jpg",
       otazky: [],
     },
   },
