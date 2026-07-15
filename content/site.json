@@ -88,7 +88,8 @@
             "odpoved": "Přijďte k volbám a podpořte především ty kandidáty, kterým důvěřujete."
           }
         ]
-      }
+      },
+      "foto": "/kandidati/marek-macurek-profil.jpg"
     },
     {
       "poradi": 6,
@@ -121,8 +122,9 @@
             "odpoved": "Přijďte k volbám a vyslovte svůj názor."
           }
         ],
-        "foto": ""
-      }
+        "foto": "/kandidati/stanislav-esterka-2.jpg"
+      },
+      "foto": "/kandidati/stanislav-esterka.jpg"
     },
     {
       "poradi": 8,
@@ -141,7 +143,12 @@
       "poradi": 10,
       "jmeno": "Ivana Hanáková",
       "datumNarozeni": "1. 8. 1982",
-      "povolani": "Personální a mzdová účetní"
+      "povolani": "Personální a mzdová účetní",
+      "foto": "/kandidati/ivana-hanakova.jpg",
+      "medailonek": {
+        "otazky": [],
+        "foto": "/kandidati/ivana-hanakova.jpg"
+      }
     }
   ],
   "program": [

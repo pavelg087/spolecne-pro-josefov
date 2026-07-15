@@ -71,6 +71,7 @@ export const kandidati: Kandidat[] = [
     jmeno: "Bc. Marek Macůrek",
     datumNarozeni: "12. 12. 1978",
     povolani: "Policie ČR",
+    foto: "/kandidati/marek-macurek-profil.jpg",
     medailonek: {
       foto: "/kandidati/marek-macurek.jpg",
       fotoPopis:
@@ -123,6 +124,11 @@ export const kandidati: Kandidat[] = [
     jmeno: "Stanislav Esterka",
     datumNarozeni: "30. 7. 1983",
     povolani: "Hasič",
+    foto: "/kandidati/stanislav-esterka.jpg",
+    medailonek: {
+      foto: "/kandidati/stanislav-esterka-2.jpg",
+      otazky: [],
+    },
   },
   {
     poradi: 8,
@@ -141,6 +147,11 @@ export const kandidati: Kandidat[] = [
     jmeno: "Ivana Hanáková",
     datumNarozeni: "1. 8. 1982",
     povolani: "Personální a mzdová účetní",
+    foto: "/kandidati/ivana-hanakova.jpg",
+    medailonek: {
+      foto: "/kandidati/ivana-hanakova.jpg",
+      otazky: [],
+    },
   },
 ];
 
