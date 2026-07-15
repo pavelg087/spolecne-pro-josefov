@@ -52,18 +52,56 @@ export const kandidati: Kandidat[] = [
     jmeno: "Ing. Radim Bílek",
     datumNarozeni: "1. 5. 1994",
     povolani: "Stavbyvedoucí",
+    foto: "/kandidati/radim-bilek.jpg",
+    medailonek: {
+      foto: "/kandidati/radim-bilek-predstaveni.jpg",
+      otazky: [
+        {
+          otazka: "Proč kandiduji?",
+          odpoved:
+            "V naší obci už delší dobu kandiduje pouze jedna volební strana. " +
+            "Myslím si, že každá obec si zaslouží možnost volby a různé pohledy " +
+            "na její rozvoj. V malé obci nejde o soupeření, ale o spolupráci. " +
+            "Zdravá konkurence ale motivuje všechny hledat lepší řešení, " +
+            "přicházet s novými nápady a posouvat obec dopředu. Právě proto " +
+            "jsem se rozhodl kandidovat – aby měli občané skutečnou možnost " +
+            "volby a důvod přijít k volbám.",
+        },
+        {
+          otazka: "Který bod programu mám nejvíc na srdci?",
+          odpoved:
+            "Nejvíce mi leží na srdci zachování tradic a péče o naši krajinu. " +
+            "Jsem srdcem folklorista, vinař i horal a právě tyto tři věci mě " +
+            "naučily vážit si toho, co jsme zdědili po našich předcích. Pro nás " +
+            "vinaře je vztah k přírodě přirozený – bez zdravé krajiny by nebylo " +
+            "ani vinohradů. Stejně důležité je ale pečovat i o naše tradice, " +
+            "protože právě spojení folkloru, lidí a krásné krajiny dělá " +
+            "z Josefova domov.",
+        },
+        {
+          otazka: "Vzkaz voličům",
+          odpoved:
+            "Kde je možnost volby, tam je i motivace být lepší. Dojděte " +
+            "k volbám.",
+        },
+      ],
+    },
   },
   {
     poradi: 3,
     jmeno: "Bc. Pavel Galatík, MSc.",
     datumNarozeni: "13. 3. 1982",
     povolani: "Konzultant IT bezpečnosti",
-    foto: "/kandidati/pavel-galatik.jpg",
+    foto: "/kandidati/pavel-galatik-profil.jpg",
+    medailonek: {
+      foto: "/kandidati/pavel-galatik-predstaveni.jpg",
+      otazky: [],
+    },
   },
   {
     poradi: 4,
     jmeno: "Kateřina Bravencová",
-    datumNarozeni: "4. 10. 1998",
+    datumNarozeni: "4. 10. 1988",
     povolani: "Učitelka v MŠ",
   },
   {
@@ -118,6 +156,60 @@ export const kandidati: Kandidat[] = [
     datumNarozeni: "28. 9. 1995",
     povolani: "Administrativní pracovnice",
     foto: "/kandidati/lucie-damborska.jpg",
+    medailonek: {
+      foto: "/kandidati/lucie-damborska-predstaveni.jpg",
+      otazky: [
+        {
+          otazka: "Jak dlouho žijete v Josefově a co vás tu nejvíc drží?",
+          odpoved:
+            "V Josefově jsem se narodila a do školky a základní školy jsem " +
+            "dojížděla do naší přátelské vesnice, do nedalekých Prušánek. I přes " +
+            "neustálé dojíždění za prací, obchodem a do škol mě to v Josefově " +
+            "stále drží. Když jsme se spolu s manželem rozhodovali, kde " +
+            "zapustíme kořeny, rozhodnutí přetrvat v Josefově bylo jednoznačné. " +
+            "Náš Josefov se nám líbí, že je malý, jsme tu vlastně všichni jako " +
+            "rodina, všichni se známe, všichni si pomáháme. To, aby se Josefov " +
+            "pomalu rozrůstal, zveleboval a kvetl, je mou velkou motivací.",
+        },
+        {
+          otazka:
+            "Čím se živíte a jak chcete své zkušenosti využít pro rozvoj obce?",
+          odpoved:
+            "Momentálně pracuji v autodopravní firmě, kde se starám o " +
+            "administrativu a chod firmy a v poslední době jsem téměř pravá ruka " +
+            "jednatele. Mé ambice jsou ale velké – mám potřebu sebe i věci kolem " +
+            "neustále posouvat dál. Proto je možnost posunout naši obec lepším " +
+            "směrem mou motivací.",
+        },
+        {
+          otazka:
+            "Kde vás lidé v Josefově nejčastěji potkají a jak trávíte volný čas?",
+          odpoved:
+            "V obci jsem často vidět. Několik let jsem vypomáhala u našeho " +
+            "skvělého hospodského, potkávala se v hospodě s kamarády i staršími " +
+            "občany a ráda si s nimi popovídala. Několik let jsem působila " +
+            "v místní chase a stala se výrazným členem, který miluje tradice " +
+            "a kroje. V posledních letech s rodinou a kamarády rádi trávíme čas " +
+            "na místním dětském hřišti.",
+        },
+        {
+          otazka: "Co byste chtěla v obci prosadit?",
+          odpoved:
+            "V obci mi chybí nádech moderní doby. Ráda bych zlepšila " +
+            "informovanost, šířila místní tradiční i nově zavedené akce a tím " +
+            "přilákala návštěvníky i společenské a sportovní vyžití.",
+        },
+        {
+          otazka: "Co byste chtěla během následujících 4 let reálně změnit?",
+          odpoved:
+            "Ráda bych zkvalitnila život v obci. Aktivně bych se zapojila do " +
+            "dlouho slibované cyklostezky na Prušánky, chodníku na hřbitov " +
+            "i vybudování silnic v nových ulicích – aby noví obyvatelé měli " +
+            "stejně kvalitní život jako zbytek obce a mohli si tu na volných " +
+            "pozemcích postavit rodinný dům.",
+        },
+      ],
+    },
   },
   {
     poradi: 7,
