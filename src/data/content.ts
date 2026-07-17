@@ -175,7 +175,7 @@ export const kandidati: Kandidat[] = [
     jmeno: "Bc. Marek Macůrek",
     datumNarozeni: "12. 12. 1978",
     povolani: "Policie ČR",
-    foto: "/kandidati/marek-macurek-profil.jpg",
+    foto: "/kandidati/marek-macurek-profil-2.jpg",
     medailonek: {
       foto: "/kandidati/marek-macurek.jpg",
       fotoPopis:
