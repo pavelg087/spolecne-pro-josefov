@@ -28,6 +28,10 @@
         "foto": "/kandidati/radim-bilek-predstaveni.jpg",
         "otazky": [
           {
+            "otazka": "Čím se živíte?",
+            "odpoved": "Do zastupitelstva kandiduji, protože chci obci nabídnout své zkušenosti ze stavebnictví a realizace velkých investičních projektů. Vím, že obecní rozpočet je omezený a každá investovaná koruna musí mít smysl. Chci přispět odborným pohledem při přípravě a realizaci projektů, které naši obec posunou dál – ať už jde o cyklostezky, plánovaný kruhový objezd, potřebnou rekonstrukci mostních objektů k bůdám, jejich přilehlé odvodnění přivalové vody z polí nebo další potřebnou infrastrukturu. Věřím, že i s omezenými prostředky lze dělat promyšlené a kvalitní investice pro budoucnost naší obce."
+          },
+          {
             "otazka": "Proč kandiduji?",
             "odpoved": "V naší obci už delší dobu kandiduje pouze jedna volební strana. Myslím si, že každá obec si zaslouží možnost volby a různé pohledy na její rozvoj. V malé obci nejde o soupeření, ale o spolupráci. Zdravá konkurence ale motivuje všechny hledat lepší řešení, přicházet s novými nápady a posouvat obec dopředu. Právě proto jsem se rozhodl kandidovat – aby měli občané skutečnou možnost volby a důvod přijít k volbám."
           },
@@ -102,7 +106,7 @@
       "poradi": 5,
       "jmeno": "Bc. Marek Macůrek",
       "datumNarozeni": "12. 12. 1978",
-      "povolani": "Policie ČR",
+      "povolani": "Policista",
       "medailonek": {
         "foto": "/kandidati/marek-macurek.jpg",
         "fotoPopis": "Marek Macůrek s mladými stolními tenisty TJ Sokol Josefov.",
