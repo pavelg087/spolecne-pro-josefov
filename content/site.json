@@ -41,11 +41,11 @@
             "odpoved": "V naší obci už delší dobu kandiduje pouze jedna volební strana. Myslím si, že každá obec si zaslouží možnost volby a různé pohledy na její rozvoj. V malé obci nejde o soupeření, ale o spolupráci. Zdravá konkurence ale motivuje všechny hledat lepší řešení, přicházet s novými nápady a posouvat obec dopředu. Právě proto jsem se rozhodl kandidovat – aby měli občané skutečnou možnost volby a důvod přijít k volbám."
           },
           {
-            "otazka": "Který bod programu mám nejvíc na srdci?",
+            "otazka": "Který bod programu máte nejvíc na srdci?",
             "odpoved": "Nejvíce mi leží na srdci zachování tradic a péče o naši krajinu. Jsem srdcem folklorista, vinař i horal a právě tyto tři věci mě naučily vážit si toho, co jsme zdědili po našich předcích. Pro nás vinaře je vztah k přírodě přirozený – bez zdravé krajiny by nebylo ani vinohradů. Stejně důležité je ale pečovat i o naše tradice, protože právě spojení folkloru, lidí a krásné krajiny dělá z Josefova domov."
           },
           {
-            "otazka": "Vzkaz voličům",
+            "otazka": "Váš vzkaz voličům?",
             "odpoved": "Kde je možnost volby, tam je i motivace být lepší. Dojděte k volbám."
           }
         ]
@@ -216,7 +216,24 @@
       "povolani": "Podnikatel",
       "foto": "/kandidati/hodyjosefov2025nede-le-vojtazprusanek-63-1783546198222.jpg",
       "medailonek": {
-        "otazky": [],
+        "otazky": [
+          {
+            "otazka": "Jak dlouho žijete v Josefově a co vás tu nejvíc drží? ",
+            "odpoved": ""
+          },
+          {
+            "otazka": "Proč kandidujete zrovna za uskupení Společně pro Josefov?",
+            "odpoved": ""
+          },
+          {
+            "otazka": "",
+            "odpoved": ""
+          },
+          {
+            "otazka": "Váš vzkaz voličům?",
+            "odpoved": ""
+          }
+        ],
         "foto": "/kandidati/hodyjosefov2026nede-le-vojtazprusanek-32-1784886800678.jpg",
         "fotoPopis": "Stárkování na josefovské hody 2026"
       }
