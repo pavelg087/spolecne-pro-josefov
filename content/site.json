@@ -203,7 +203,10 @@
       "poradi": 8,
       "jmeno": "Luboš Koliba",
       "datumNarozeni": "4. 6. 1976",
-      "povolani": "Opravář zemědělských strojů"
+      "povolani": "Opravář zemědělských strojů",
+      "medailonek": {
+        "otazky": []
+      }
     },
     {
       "poradi": 9,
