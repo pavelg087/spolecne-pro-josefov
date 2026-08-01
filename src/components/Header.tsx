@@ -5,7 +5,7 @@ import { sdruzeni } from "@/data/content";
 
 const odkazy = [
   { href: "#o-nas", label: "O nás" },
-  { href: "#kandidati", label: "Kandidáti" },
+  { href: "#kandidati", label: "Naši lidé" },
   { href: "#program", label: "Program" },
   { href: "#aktivity", label: "Aktivity" },
   { href: "#kontakt", label: "Kontakt" },

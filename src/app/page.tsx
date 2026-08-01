@@ -46,7 +46,7 @@ export default async function Home() {
                 href="#kandidati"
                 className="rounded-lg border border-primary/40 px-6 py-3 font-semibold text-primary transition hover:bg-primary/5"
               >
-                Naši kandidáti
+                Naši lidé
               </a>
             </div>
           </div>
@@ -78,7 +78,7 @@ export default async function Home() {
         <section id="kandidati" className="scroll-mt-20 bg-surface">
           <div className="mx-auto max-w-6xl px-4 py-20">
             <h2 className="text-center text-3xl font-bold text-primary">
-              Naši kandidáti
+              Naši lidé
             </h2>
             <p className="mt-3 text-center text-gray-600">
               Lidé, kteří jsou připraveni pracovat pro Josefov.
