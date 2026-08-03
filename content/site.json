@@ -227,7 +227,24 @@
       "datumNarozeni": "4. 6. 1976",
       "povolani": "Opravář zemědělských strojů",
       "medailonek": {
-        "otazky": [],
+        "otazky": [
+          {
+            "otazka": "Odkud pocházíte?",
+            "odpoved": "Pocházím z Josefova. Rodiče žili v Josefově a já jsem se tu narodil a žiju tu."
+          },
+          {
+            "otazka": "Čím se živíte?",
+            "odpoved": "Pracuju jako opravář zemědělských strojů pro ZP Mikulčice."
+          },
+          {
+            "otazka": "Čemu se věnujete ve volném čase?",
+            "odpoved": "Rád pomůžu či něco opravím nebo rád posedím s přáteli."
+          },
+          {
+            "otazka": "Vzkaz voličům?",
+            "odpoved": "Pokud chcete něco změnit, tak přijďte k volbám."
+          }
+        ],
         "foto": "/kandidati/whatsapp-image-2026-08-01-at-19-19-27-1785605013560.jpeg"
       },
       "foto": "/kandidati/whatsapp-image-2026-08-01-at-19-18-371-1785616567504.jpg"
