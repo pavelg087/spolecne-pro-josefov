@@ -285,7 +285,28 @@
       "povolani": "Personální a mzdová účetní",
       "foto": "/kandidati/ivana-hanakova.jpg",
       "medailonek": {
-        "otazky": [],
+        "otazky": [
+          {
+            "otazka": "Odkud pocházíte?",
+            "odpoved": "Pocházím z Hodonína, ale v Josefově žiju už 21 let a neměnila bych."
+          },
+          {
+            "otazka": "Čím se živíte?",
+            "odpoved": "Pracuji jako personální a mzdová účetní ve firmě KAMPI OFFICE s.r.o., která je zaměstnavatelem na chráněném trhu práce a zaměstnává více než 75% invalidů."
+          },
+          {
+            "otazka": "Čemu se věnujete ve volném čase?",
+            "odpoved": "Ve volném čase se věnuji našemu jezdeckému oddílu, výcviku koní, jezdců a parkurovému skákání. A taky hraju pinec za Sokol Josefov."
+          },
+          {
+            "otazka": "Co byste chtěla v obci prosadit?",
+            "odpoved": "Nejvíc by určitě chtělo zapracovat na cyklostezce do Prušánek, kam dojíždí převážná část dětí z Josefova do školy. Zlepšit komunikaci a informovanost občanů formou stránek obce a sociálních sítí. Podporovat sport u dětí, informovat o úspěších atd."
+          },
+          {
+            "otazka": "Váš vzkaz voličům?",
+            "odpoved": "Společně pro Josefov!"
+          }
+        ],
         "foto": "/kandidati/ivana-hanakova.jpg"
       }
     }
