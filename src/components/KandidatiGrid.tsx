@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import type { Kandidat } from "@/data/content";
+import { slugFromName } from "@/lib/slug";
 
 function CardInner({ k }: { k: Kandidat }) {
   const cardFoto = k.foto ?? k.medailonek?.foto;
@@ -109,6 +110,14 @@ function Modal({ k, onClose }: { k: Kandidat; onClose: () => void }) {
               </div>
             ))}
           </dl>
+
+          {/* Samostatná stránka — vhodná pro sdílení na sociálních sítích */}
+          <a
+            href={`/kandidat/${slugFromName(k.jmeno)}`}
+            className="mt-6 inline-block text-sm font-semibold text-primary hover:underline"
+          >
+            Otevřít samostatnou stránku →
+          </a>
         </div>
       </div>
     </div>

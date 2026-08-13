@@ -3,12 +3,13 @@
 import { useState } from "react";
 import { sdruzeni } from "@/data/content";
 
+// Absolutní adresy (s "/"), aby menu fungovalo i na podstránkách kandidátů.
 const odkazy = [
-  { href: "#o-nas", label: "O nás" },
-  { href: "#kandidati", label: "Naši lidé" },
-  { href: "#program", label: "Program" },
-  { href: "#aktivity", label: "Aktivity" },
-  { href: "#kontakt", label: "Kontakt" },
+  { href: "/#o-nas", label: "O nás" },
+  { href: "/#kandidati", label: "Naši lidé" },
+  { href: "/#program", label: "Program" },
+  { href: "/#aktivity", label: "Aktivity" },
+  { href: "/#kontakt", label: "Kontakt" },
 ];
 
 export default function Header() {
@@ -17,7 +18,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-primary text-white shadow-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-        <a href="#" className="flex items-center gap-2.5 font-bold leading-tight">
+        <a href="/" className="flex items-center gap-2.5 font-bold leading-tight">
           <span className="flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-full bg-[#f3f7fa] shadow-sm">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
